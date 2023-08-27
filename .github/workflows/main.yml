@@ -18,12 +18,13 @@ jobs:
         with:
           terraform_version: 1.0.6  # Change to the desired Terraform version
       
-      - name: Install TerraScan
+      - name: Download and extract TerraScan
         run: |
-          wget https://github.com/accurics/terrascan/releases/latest/download/terrascan_1.18.3_Linux_x86_64.tar.gz -O terrascan
+          wget https://github.com/accurics/terrascan/releases/latest/download/terrascan_${{ runner.os }}_amd64.tar.gz
+          tar xvfz terrascan_${{ runner.os }}_amd64.tar.gz
           chmod +x terrascan
           sudo mv terrascan /usr/local/bin/
-
+      
       - name: Run TerraScan
         run: |
           terrascan scan -i terraform -d .
