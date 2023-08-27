@@ -22,7 +22,7 @@ jobs:
         run: |
           # Get the latest release tag from the TerraScan GitHub repository
           TERRASCAN_VERSION=$(curl -s https://api.github.com/repos/accurics/terrascan/releases/latest | jq -r '.tag_name')
-          wget https://github.com/accurics/terrascan/releases/latest/download/terrascan_${{ runner.os }}_amd64_${TERRASCAN_VERSION}.tar.gz
+          wget https://github.com/accurics/terrascan/releases/latest/download/terrascan_${TERRASCAN_VERSION}_${{ runner.os }}_x86_64.tar.gz
           tar xvfz terrascan_${{ runner.os }}_amd64_${TERRASCAN_VERSION}.tar.gz
           chmod +x terrascan
           sudo mv terrascan /usr/local/bin/
