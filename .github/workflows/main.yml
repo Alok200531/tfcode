@@ -20,7 +20,7 @@ jobs:
       
       - name: Install TerraScan
         run: |
-          wget https://github.com/accurics/terrascan/releases/latest/download/terrascan_${{ runner.os }}_amd64 -O terrascan
+          wget https://github.com/accurics/terrascan/releases/latest/download/terrascan_1.18.3${{ runner.os }}_amd64 -O terrascan
           chmod +x terrascan
           sudo mv terrascan /usr/local/bin/
 
