@@ -1,0 +1,11 @@
+name: first workflow
+on: [push]
+
+jobs:
+    run-PowerShell-commands:
+        runs-on: windows-latest
+        steps:
+            - name: ps command
+              run: get-service
+            - name: multiline command
+              run: get-process 
